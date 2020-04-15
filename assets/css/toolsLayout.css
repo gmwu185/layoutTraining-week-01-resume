@@ -25,40 +25,40 @@
 
 /* @font-face {
   font-family:'PingFangTC--Thin';
-  src: url("/assets/font/PingFangTC/PingFangTC-Thin.ttf");
+  src: url("/../assets/font/PingFangTC/PingFangTC-Thin.ttf");
 } */
 
 @font-face {
 	font-family:'PingFangTC-woff--Regular';
 	font-style:normal;
   src: 
-  /* url("/assets/font/PingFang/PingFangTC-Regular.ttf") format('truetype')
+  /* url("/../assets/font/PingFang/PingFangTC-Regular.ttf") format('truetype')
   , */
-  url("/assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2")
+  url("/../assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2")
   , 
-  url("/assets/font/PingFangTC/PingFang-Regular.woff") format("woff")
+  url("/../assets/font/PingFangTC/PingFang-Regular.woff") format("woff")
   ;
 }
 @font-face {
   font-family:'PingFangTC-woff--Medium';
   font-style:normal;
   src:
-    url("/assets/font/PingFangTC/PingFangTC-Medium.ttf") format('truetype') 
+    url("/../assets/font/PingFangTC/PingFangTC-Medium.ttf") format('truetype') 
     /* ,
-    url("/assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2") */
+    url("/../assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2") */
     , 
-    url("/assets/font/PingFangTC/PingFang-Medium.woff") format("woff")
+    url("/../assets/font/PingFangTC/PingFang-Medium.woff") format("woff")
     ;
 }
 @font-face {
 	font-family:'PingFangTC-woff--Light';
   font-style:normal;
   src:
-    url("/assets/font/PingFangTC/PingFangSC-Light.ttf")  format('truetype') 
+    url("/../assets/font/PingFangTC/PingFangSC-Light.ttf")  format('truetype') 
     ,
-    url("/assets/font/PingFangTC/PingFangTC-Light.woff2") format("woff2")
+    url("/../assets/font/PingFangTC/PingFangTC-Light.woff2") format("woff2")
     /* ,  
-    url("/assets/font/PingFangTC/PingFang-Regular.woff") format("woff") */
+    url("/../assets/font/PingFangTC/PingFang-Regular.woff") format("woff") */
     ;
 }
 
@@ -142,8 +142,8 @@ body{
   background-color: var(--white);
 
   font-family:
-    PingFang TC
-    , 
+    /* PingFang TC
+    ,  */
     'PingFangTC-woff--Light'
     , 
     '微軟正黑體'
