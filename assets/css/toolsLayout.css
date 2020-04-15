@@ -1,0 +1,474 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+/*=============================================
+=            color var            =
+=============================================*/
+:root{
+  --primary: #415165;
+  --second: #96A9C4;
+  --red: #A00404;
+  --black: #000000;
+  --white: #FFFFFF;
+}
+/*=====  End of color var  ======*/
+
+
+
+
+/*=============================================
+=            base            =
+=============================================*/
+
+/* fontSets
+-------------------------------------------------- */
+
+/* @font-face {
+  font-family:'PingFangTC--Thin';
+  src: url("/assets/font/PingFangTC/PingFangTC-Thin.ttf");
+} */
+
+@font-face {
+	font-family:'PingFangTC-woff--Regular';
+	font-style:normal;
+  src: 
+  /* url("/assets/font/PingFang/PingFangTC-Regular.ttf") format('truetype')
+  , */
+  url("/assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2")
+  , 
+  url("/assets/font/PingFangTC/PingFang-Regular.woff") format("woff")
+  ;
+}
+@font-face {
+  font-family:'PingFangTC-woff--Medium';
+  font-style:normal;
+  src:
+    url("/assets/font/PingFangTC/PingFangTC-Medium.ttf") format('truetype') 
+    /* ,
+    url("/assets/font/PingFangTC/PingFangTC-Regular.woff2") format("woff2") */
+    , 
+    url("/assets/font/PingFangTC/PingFang-Medium.woff") format("woff")
+    ;
+}
+@font-face {
+	font-family:'PingFangTC-woff--Light';
+  font-style:normal;
+  src:
+    url("/assets/font/PingFangTC/PingFangSC-Light.ttf")  format('truetype') 
+    ,
+    url("/assets/font/PingFangTC/PingFangTC-Light.woff2") format("woff2")
+    /* ,  
+    url("/assets/font/PingFangTC/PingFang-Regular.woff") format("woff") */
+    ;
+}
+
+/* 
+  * * MacOS 系統字使用第一筆，讓樣式戴入時先比對取用。
+  * * MacOS 系統字 pingFang 字重變化 100, 200, 400, 500, 600。
+  * * 取用 MacOS 系統字方式，如果使用指用特定字重字體 font-family: PingFangTC-Light; 或是 font-family: PingFangTC-Thin;，只會針對中文字元處理，英文字元需要有對應的字體補於中文字體後方，像是 sans-serif 字體。
+  * * 需特別注意 font-family 的多筆屬性值，第一筆開頭前方不能有 ',' 後方每多一筆設定都需要透過 ',' 間隔開來，最後一筆後方在 ':' 前方不能帶上 ',' 會使設定不生效。
+**/
+.ff--pingFang-Regular{
+  font-family: 
+    PingFang TC
+    ,
+    'PingFangTC-woff--Regular'
+    ,
+    'Microsoft JhengHei'
+    ,
+    '微軟正黑體'
+    ,
+    serif
+    ,
+    sans-serif
+    ;
+}
+.ff--pingFang-Medium{
+  font-family: 
+    PingFang TC
+    , 
+    'PingFangTC-woff--Medium'
+    , 
+    '微軟正黑體'
+    , 
+    'Microsoft JhengHei'
+    ,
+    sans-serif
+    ;
+  font-weight: 500;
+}
+.ff--pingFang-Light{
+  font-family: 
+    PingFang TC
+    , 
+    'PingFangTC-woff--Light'
+    , 
+    '微軟正黑體'
+    , 
+    'Microsoft JhengHei'
+    ,
+    sans-serif
+    ;
+  font-weight: 200;
+}
+
+.ff--andaleMono{
+  font-family: Andale Mono, 'Roboto Mono', Verdana, regular;
+}
+.ff--Roboto-Medium{
+  font-family: Roboto, 'Roboto', sans-serif;
+  font-weight: 600;
+}
+.ff--Roboto-Light{
+  font-family: Roboto, 'Roboto', sans-serif;
+  font-weight: 300;
+}
+
+/* End of fontSets
+-------------------------------------------------- */
+
+
+/* reboot
+-------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+html{
+  font-size: 24px;
+}
+body{
+  background-color: var(--white);
+
+  font-family:
+    PingFang TC
+    , 
+    'PingFangTC-woff--Light'
+    , 
+    '微軟正黑體'
+    , 
+    'Microsoft JhengHei'
+    ,
+    sans-serif
+    ;
+  font-weight: 300;  
+  line-height: 36px;
+  font-size: 1rem;
+}
+img{
+  /* https://github.com/twbs/bootstrap/blob/master/scss/_reboot.scss#L347 */
+  vertical-align: middle; 
+  border-style: none; /* Remove the border on images inside links in IE 10-. */
+  max-width: 100%;
+  height: auto;
+}
+/* End of reboot
+-------------------------------------------------- */
+
+
+/* typography
+-------------------------------------------------- */
+.h1{
+  font-size: 80px;
+  font-weight: normal;
+  /* 2 (行) 區塊總高度 180px | 80px + ( 5 * 2 ) = 90px * 2 (行) = 180px */
+  line-height: 90px;
+  /* line-height: 110%; */
+  border-bottom: 2px solid #333;
+  padding-bottom: 22px;
+  margin-bottom: 48px;
+}
+.h2{
+  line-height: 45px;
+  font-weight: 400;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.h3{
+  line-height: 36px;
+}
+.fontSize--l{
+  font-size: 32px;
+}
+.fontSize--m{
+  font-size: 24px;
+}
+.fontSize--s{
+  font-size: 20px;
+  line-height: 30px;
+}
+/* End of typography
+-------------------------------------------------- */
+
+
+/*=====  End of base  ======*/
+
+
+
+
+
+
+/*=============================================
+=                   layout                   =
+=============================================*/
+
+/* grid
+-------------------------------------------------- */
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.container--full{
+  padding-left: 15px;
+  padding-right: 15px;
+}
+/* End of grid
+-------------------------------------------------- */
+
+
+/*============  End of layout  =============*/
+
+
+
+
+
+
+/*=============================================
+=            component
+=============================================*/
+
+/* 偽元素列表樣式
+-------------------------------------------------- */
+.c-pseudoList{
+  position: relative;
+}
+.c-pseudoList--point::before{
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #96A9C4;
+  background-color: var(--second);
+  left: -32px;
+  top: 10px;
+  border-radius: 50px;
+}
+.c-pseudoList--line::after {
+  content: '';
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  background-color: #96A9C4;
+  background-color: var(--second);
+  left: -24px;
+  top: 13px;
+}
+.c-pseudoList--line:last-child::after {
+  height: 0px;
+  width: 0px;
+}
+/* End of 偽元素列表樣式
+-------------------------------------------------- */
+
+
+/*=====  End of component  ======*/
+
+
+
+
+
+
+
+
+/*=============================================
+=                   utils                   =
+=============================================*/
+
+/* Borders
+-------------------------------------------------- */
+.border--left{
+  border-left: 1px solid;
+}
+.border--bottom{
+  border-bottom: 1px solid;
+}
+.border--white{
+  border-color: #FFFFFF;
+  border-color: var(--white);
+}
+.border--second{
+  border-color: #96A9C4;
+  border-color: var(--second);
+}
+/* End of Borders
+-------------------------------------------------- */
+
+/* Colors
+-------------------------------------------------- */
+.bg--primary{
+  background-color: #415165;
+  background-color: var(--primary);
+}
+.bg--second{
+  background-color: #96A9C4;
+  background-color: var(--second);
+}
+.bgLinearGradient--whiteToSecond{
+  background: linear-gradient(
+    #fff 0%,
+    #fff 70px,
+    #96A9C4 70px,
+    #96A9C4 88%,
+    #fff 88%,
+    #fff 100%
+  )
+}
+
+.text--white{
+  color: #fff;
+  color: var(--white);
+}
+.text--white a{
+  color: var(--white);
+  color: #fff;
+  text-decoration: none;
+}
+.text--white a:hover{
+  color: #96A9C4;
+  color: var(--second);
+}
+.text--warn{
+  color: #A00404;
+  color: var(--red);
+}
+/* End of Colors
+-------------------------------------------------- */
+
+/* Sizing
+-------------------------------------------------- */
+.maxWidth--665{
+  max-width: 665px;
+}
+/* End of Sizing
+-------------------------------------------------- */
+
+/* Spacing
+-------------------------------------------------- */
+.pl--6{
+  padding-left: 6px;
+}
+.px--8{
+  padding-left: 8px;
+  padding-right: 8px;
+}
+.pb--8{
+  padding-bottom: 8px;
+}
+.px--16{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+.pb--16{
+  padding-bottom: 16px; 
+}
+.pt--24{
+  padding-top: 24px;
+}
+.pb--24{
+  padding-bottom: 24px;
+}
+.pl--24{
+  padding-left: 24px;
+}
+.pb--32{
+  padding-bottom: 32px;
+}
+.pt--48{
+  padding-top: 48px;
+}
+.pb--48{
+  padding-bottom: 48px;
+}
+.pb--56{
+  padding-bottom: 56px;
+}
+.px--102{
+  padding-left: 102px;
+  padding-right: 102px;
+}
+
+.my--8{
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.mx--12{
+  margin-right: 12px;
+  margin-bottom: 12px;
+}
+.mb--24{
+  margin-bottom: 24px;
+}
+.ml--24{
+  margin-left: 24px;
+}
+.mb--16{
+  margin-bottom: 16px;
+}
+.mb--32{
+  margin-bottom: 32px;
+}
+.mb--40{
+  margin-bottom: 40px;
+}
+.mb--48{
+  margin-bottom: 48px;
+}
+.mb--72{
+  margin-bottom: 72px;
+}
+
+/* End of Spacing
+-------------------------------------------------- */
+
+
+/* Text
+-------------------------------------------------- */
+.textAlign--center{
+  text-align: center;
+}
+.textAlign--left{
+  text-align: left;
+}
+.verticalAlign--middle{
+  vertical-align: middle;
+}
+/* End of Text
+-------------------------------------------------- */
+
+/* Display & flex
+-------------------------------------------------- */
+.d--inlineBlock{
+  display: inline-block;
+}
+.d--inline{
+  display: inline;
+}
+.d--flex{
+  display: flex;
+}
+/* End of Display & flex
+-------------------------------------------------- */
+
+
+/* Other
+-------------------------------------------------- */
+
+
+
+/* End of Other
+-------------------------------------------------- */
+
+
+/*============  End of utils  =============*/
