@@ -142,8 +142,8 @@ body{
   background-color: var(--white);
 
   font-family:
-    /* PingFang TC
-    ,  */
+    PingFang TC
+    , 
     'PingFangTC-woff--Light'
     , 
     '微軟正黑體'
