@@ -1,5 +1,7 @@
-[元件化與 flex 排版](https://gmwu185.github.io/layoutTraining-week-01-resume/index.html)
-[工具類排版](https://gmwu185.github.io/layoutTraining-week-01-resume/toolsLayout.html)
+
+
+*   [元件化與 flex 排版](https://gmwu185.github.io/layoutTraining-week-01-resume/index.html)
+*   [工具類排版](https://gmwu185.github.io/layoutTraining-week-01-resume/toolsLayout.html)
 
 
 # 版本一 (toolsLayout.html)
