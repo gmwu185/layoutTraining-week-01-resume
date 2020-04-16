@@ -128,6 +128,7 @@
 -------------------------------------------------- */
 
 
+
 /* reboot
 -------------------------------------------------- */
 *,
@@ -167,6 +168,7 @@ img{
 -------------------------------------------------- */
 
 
+
 /* typography
 -------------------------------------------------- */
 .h1{
@@ -202,11 +204,7 @@ img{
 /* End of typography
 -------------------------------------------------- */
 
-
 /*=====  End of base  ======*/
-
-
-
 
 
 
@@ -232,19 +230,128 @@ img{
 
 
 
-
-
-
 /*=============================================
 =            component
 =============================================*/
 
-/* 偽元素列表樣式
+.c-title{
+  line-height: 45px;
+  font-weight: 400;
+  border-bottom: 1px solid #000000;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+}
+.c-title__ch, .c-title__en {
+  vertical-align: middle;
+}
+.c-title__ch{
+  font-size: 32px;
+  font-family: 
+    PingFang TC
+    ,
+    'PingFangTC-woff--Regular'
+    ,
+    'Microsoft JhengHei'
+    ,
+    '微軟正黑體'
+    ,
+    serif
+    ,
+    sans-serif
+    ;
+  font-weight: 500;  
+}
+.c-title__en{
+  padding-left: 16px;
+  padding-right: 16px;
+  /* color: #A00404; */
+  /* color: var(--red); */
+  font-family: Roboto, 'Roboto', sans-serif;
+  font-weight: 600;
+}
+
+
+
+
+.c-list{
+  padding-left: 24px;
+  margin-bottom: 72px;
+  /* margin-left: 24px; */
+}
+.c-list li:last-child{
+  padding-bottom: 0;
+}
+
+.c-list--xs{
+  /* margin-bottom: 0; */
+}
+.c-list--xs li{
+  padding-bottom: 16px;
+}
+.c-list--s li{
+  padding-bottom: 24px;
+}
+.c-list--m li{
+  padding-bottom: 32px;
+}
+
+.c-list--horizontal{
+  display: flex;
+  justify-content: center;
+}
+.c-list--horizontal li{
+  margin-left: 12px;
+  margin-right: 12px;
+}
+
+.c-listTitle {
+  list-style: 36px;
+  font-family: PingFang TC , 'PingFangTC-woff--Medium' , '微軟正黑體' , 'Microsoft JhengHei' , sans-serif;
+  font-weight: 500;
+}
+.c-listInfo {
+  font-size: 20px;
+  line-height: 30px;
+  font-family: PingFang TC , 'PingFangTC-woff--Light' , '微軟正黑體' , 'Microsoft JhengHei' , sans-serif;
+  font-weight: 200;
+}
+
+.c-flexBanner{
+  display: flex;
+}
+.c-flexBanner__main{
+  max-width: 1200px;
+  padding: 24px 102px 56px;
+  flex: 0 0 95%;
+  display: flex;
+  flex-direction: column;
+}
+.c-flexBanner__main__list{
+  display: flex;
+  flex-direction: column;
+  align-self: center;
+}
+.c-flexBanner__second{
+  width: 100%;
+  margin-top: 70px;
+  margin-bottom: 65px;
+}
+/*=====  End of component  ======*/
+
+
+
+
+
+/*=============================================
+=                   utils                   =
+=============================================*/
+
+/* 偽元素單點樣式 - 依服於 li
 -------------------------------------------------- */
-.c-pseudoList{
+.u-pseudoOnePoint{
   position: relative;
 }
-.c-pseudoList--point::before{
+.u-pseudoOnePoint::before{
   content: '';
   position: absolute;
   height: 16px;
@@ -255,7 +362,29 @@ img{
   top: 10px;
   border-radius: 50px;
 }
-.c-pseudoList--line::after {
+/* End of 偽元素單點樣式 - 依服於 li
+-------------------------------------------------- */
+
+/* 偽元素點與線列表樣式 - 依服於 ul/ol 等父層元素上
+-------------------------------------------------- */
+.u-pseudoList li{
+  position: relative;
+}
+.u-pseudoList--line li:last-child{
+  
+}
+.u-pseudoList--point li::before{
+  content: '';
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #96A9C4;
+  background-color: var(--second);
+  left: -32px;
+  top: 10px;
+  border-radius: 50px;
+}
+.u-pseudoList--line li::after {
   content: '';
   position: absolute;
   height: 100%;
@@ -265,26 +394,12 @@ img{
   left: -24px;
   top: 13px;
 }
-.c-pseudoList--line:last-child::after {
+.u-pseudoList--line li:last-child::after {
   height: 0px;
   width: 0px;
 }
-/* End of 偽元素列表樣式
+/* End of 偽元素點與線列表樣式 - 依服於 ul/ol 等父層元素上
 -------------------------------------------------- */
-
-
-/*=====  End of component  ======*/
-
-
-
-
-
-
-
-
-/*=============================================
-=                   utils                   =
-=============================================*/
 
 /* Borders
 -------------------------------------------------- */
@@ -356,6 +471,9 @@ img{
 
 /* Spacing
 -------------------------------------------------- */
+.pl--0{
+  padding-left: 0;
+}
 .pl--6{
   padding-left: 6px;
 }
@@ -399,13 +517,17 @@ img{
   padding-right: 102px;
 }
 
+
+.mb--0{
+  margin-bottom: 0;
+}
 .my--8{
   margin-top: 8px;
   margin-bottom: 8px;
 }
 .mx--12{
   margin-right: 12px;
-  margin-left: 12px;
+  margin-bottom: 12px;
 }
 .mb--24{
   margin-bottom: 24px;
@@ -447,7 +569,7 @@ img{
 /* End of Text
 -------------------------------------------------- */
 
-/* Display & flex
+/* Display
 -------------------------------------------------- */
 .d--inlineBlock{
   display: inline-block;
@@ -455,19 +577,97 @@ img{
 .d--inline{
   display: inline;
 }
+
+/* End of Display
+-------------------------------------------------- */
+
+
+/* flex
+-------------------------------------------------- */
+
 .d--flex{
   display: flex;
 }
-/* End of Display & flex
--------------------------------------------------- */
 
+/*----------  flex-direction  ----------*/
+.flexDirection--row {
+  flex-direction: row;
+}
 
-/* Other
--------------------------------------------------- */
+.flexDirection--column {
+  flex-direction: column;
+}
 
+.flexDirection--rowReverse {
+  flex-direction: row-reverse;
+}
 
+.flexDirection--columnReverse {
+  flex-direction: column-reverse;
+}
 
-/* End of Other
+/*----------  flex-direction  ----------*/
+
+/*----------  flexWrap  ----------*/
+.flexWrap--nowrap {
+  flex-wrap: nowrap;
+}
+
+.flexWrap--wrap {
+  flex-wrap: wrap;
+}
+/*----------  /flexWrap  ----------*/
+
+/*----------  justify-content  ----------*/
+.justifyContent--flexStart {
+  justify-content: flex-start;
+}
+
+.justifyContent--center {
+  justify-content: center;
+}
+
+.justifyContent--flexEnd {
+  justify-content: flex-end;
+}
+
+.justifyContent--spaceAround {
+  justify-content: space-around;
+}
+
+.justifyContent--spaceBetween {
+  justify-content: space-between;
+}
+
+.justifyContent--spaceEvenly {
+  justify-content: space-evenly;
+}
+
+/*----------  /justify-content  ----------*/
+/*----------  align-items  ----------*/
+.alignItems--flexStart {
+  align-items: flex-start;
+}
+
+.alignItems--flexEnd {
+  align-items: flex-end;
+}
+
+.alignItems--center {
+  align-items: center;
+}
+
+.alignItems--stretch {
+  align-items: stretch;
+}
+
+/*----------  /align-items  ----------*/
+
+.alignSelf--center{
+  align-self: center;
+}
+
+/* End of flex
 -------------------------------------------------- */
 
 
